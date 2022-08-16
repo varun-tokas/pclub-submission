@@ -23,7 +23,7 @@ signed main() {
     int x=distribution(generator)%2+1;
     printf("%d ",x);
     if(x%2)
-    printf("%d %d\n",distribution(generator)%(1<<n)+1,distribution(generator));
+    printf("%d %d\n",distribution(generator)%(1<<n)+1,distribution(generator))%100001);
     else printf("%d\n",distribution(generator))%100001);
   }
   fclose(stdout);
