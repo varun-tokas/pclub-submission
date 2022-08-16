@@ -6,11 +6,13 @@ signed main() {
   ios_base::sync_with_stdio(false);
   cin.tie(NULL);
   cout.tie(NULL);
-  int n,m;
-  cin>>n>>m;
+  int n;
+  scanf("%d",&n);
+  freopen("testcases.txt","r",stdin);
+  freopen("op","w",stdout);
   vector<int> tr((1<<(n+1)),0);
   for(int i=0;i<1<<n;i++) {
-    cin>>tr[i|(1<<n)];
+    scanf("%d",&tr[i|(1<<n)]);
   }
   for(int j1=1<<n;j1<(1<<(n+1));j1++) {
     int j=j1;
@@ -20,12 +22,14 @@ signed main() {
       j>>=1;
     }
   }
+  int m;
+  scanf("%d",&m);
   while(m--) {
     int t;
-    cin>>t;
+    scanf("%d",&t);
     if(t==1) {
       int p,b;
-      cin>>p>>b;
+      scanf("%d %d",&p,&b);
       --p;
       p|=1<<n;
       tr[p]=b;
@@ -34,12 +38,14 @@ signed main() {
         else tr[p/2]=tr[p]^tr[p^1];
         p>>=1;
       }
-      cout<<tr[1]<<endl;
+      printf("%d\n",tr[1]);
     }
     else {
       int k;
-      cin>>k;
-      cout<<tr[1]<<endl;
+      scanf("%d",&k);
+      printf("%d\n",tr[1]);
     }
   }
+  fclose(stdin);
+  fclose(stdout);
 }
