@@ -24,7 +24,7 @@ signed main() {
     printf("%d ",x);
     if(x%2)
     printf("%d %d\n",distribution(generator)%(1<<n)+1,distribution(generator));
-    else printf("%d\n",distribution(generator));
+    else printf("%d\n",distribution(generator))%100001);
   }
   fclose(stdout);
 }
